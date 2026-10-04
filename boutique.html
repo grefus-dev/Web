@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Boutique en ligne | Grefus, développeur web à Douala</title>
+<meta name="description" content="Vos produits avec photos et prix, et la commande qui arrive directement sur votre WhatsApp.">
+<style>
+:root{color-scheme:light;--c:#0F6B43;--ink:#0D1B14;--soft:#52645A;--bg:#F6F8F5;--card:#fff;--line:#DCE5DE;--sun:#F4B400}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:#F6F8F5}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-text-size-adjust:100%}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.12;margin:0;letter-spacing:-.02em}
+h1{font-size:clamp(2.1rem,8vw,3.6rem);font-weight:800}
+h2{font-size:clamp(1.6rem,5.5vw,2.2rem);font-weight:800;margin-bottom:10px}
+h3{font-size:1.2rem}
+p{margin:0}
+.flag{height:6px;background:linear-gradient(90deg,#0F6B43 33%,#C8382B 33% 66%,#F4B400 66%)}
+nav{position:sticky;top:0;z-index:20;background:rgba(13,27,20,.96);backdrop-filter:blur(8px)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+.brand{color:#fff;font-weight:800;font-size:1.15rem;text-decoration:none}
+.brand b{color:var(--sun)}
+.btn{display:inline-block;background:var(--sun);color:var(--ink);font-weight:800;text-decoration:none;padding:15px 26px;border-radius:12px;font-size:1.02rem;box-shadow:0 6px 18px rgba(0,0,0,.18);transition:transform .15s,box-shadow .15s}
+.btn:hover,.btn:active{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.25)}
+.btn.sm{padding:9px 16px;font-size:.92rem;box-shadow:none}
+.btn.ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7);box-shadow:none}
+.btn.green{background:var(--c);color:#fff}
+.btn.full{display:block;text-align:center}
+a:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.hero{background:var(--ink);color:#fff;padding:60px 0 56px;background-image:radial-gradient(circle at 85% 0,rgba(15,107,67,.7),transparent 55%)}
+.hero.p{background-color:var(--c);background-image:linear-gradient(160deg,rgba(0,0,0,.05),rgba(0,0,0,.45))}
+.hero .sub{font-size:1.15rem;opacity:.92;max-width:34em;margin:18px 0 28px}
+.hero .row{display:flex;flex-wrap:wrap;gap:12px}
+.back{display:inline-block;color:#fff;opacity:.85;text-decoration:none;margin-bottom:22px;font-size:.95rem}
+.trust{display:grid;gap:10px;margin-top:34px}
+.trust div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:12px 16px;font-weight:600}
+section{padding:46px 0}
+.lead{color:var(--soft);margin-bottom:24px}
+.grid{display:grid;gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 2px 10px rgba(13,27,20,.05)}
+.card .ic{font-size:1.8rem;margin-bottom:8px}
+.card p{color:var(--soft);margin-top:6px}
+.price{font-weight:800;color:var(--c);font-size:1.15rem;margin:4px 0 10px}
+.card .btn{margin-top:14px}
+.pc{display:block;text-decoration:none;color:#fff;border-radius:16px;padding:26px 22px;background:var(--c);transition:transform .15s,box-shadow .15s;box-shadow:0 8px 22px rgba(13,27,20,.18)}
+.pc:hover,.pc:active{transform:translateY(-4px);box-shadow:0 14px 30px rgba(13,27,20,.28)}
+.pc .ic{font-size:2rem}
+.pc h3{margin:8px 0 6px;font-size:1.35rem}
+.pc p{opacity:.92}
+.pc span{display:inline-block;margin-top:14px;background:rgba(255,255,255,.2);padding:8px 14px;border-radius:10px;font-weight:700}
+.steps{counter-reset:s;display:grid;gap:14px}
+.steps li{list-style:none;counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 16px 16px 66px;position:relative}
+.steps li:before{content:counter(s);position:absolute;left:16px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:var(--c);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+.steps{padding:0;margin:0}
+.browser{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.3);color:var(--ink);margin-top:34px}
+.bar{background:#E9EEEA;padding:10px 14px;display:flex;gap:6px;align-items:center}
+.bar i{width:10px;height:10px;border-radius:50%;background:#B9C4BC;display:block}
+.bar span{margin-left:10px;font-size:.78rem;color:#6B7C72}
+.mock{padding:18px}
+.mock h4{margin:0 0 12px;font-size:1.1rem;color:var(--c)}
+.item{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 0;border-top:1px solid var(--line)}
+.item b{display:block;font-size:.98rem}
+.item small{color:var(--soft)}
+.item em{font-style:normal;background:var(--c);color:#fff;font-weight:700;font-size:.82rem;padding:8px 12px;border-radius:8px;white-space:nowrap}
+.cta{background:var(--ink);color:#fff;border-radius:20px;padding:36px 22px;text-align:center;background-image:radial-gradient(circle at 100% 0,rgba(15,107,67,.7),transparent 60%)}
+.cta p{opacity:.9;margin:10px 0 22px}
+footer{padding:30px 0 90px;text-align:center;color:var(--soft);font-size:.9rem}
+footer a{color:var(--soft)}
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;background:#25D366;color:#06210F;font-weight:800;text-decoration:none;padding:14px 20px;border-radius:999px;box-shadow:0 8px 22px rgba(0,0,0,.3)}
+@media(min-width:640px){.grid.c2{grid-template-columns:1fr 1fr}.grid.c3{grid-template-columns:repeat(3,1fr)}.trust{grid-template-columns:repeat(3,1fr)}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body style="--c:#0F6B43">
+<div class="flag"></div>
+<nav><div class="wrap"><a class="brand" href="index.html">Grefus<b>.</b>dev</a><a class="btn sm js-wa" href="https://wa.me/237657609642?text=Bonjour%2C%20j%27ai%20besoin%20d%27un%20service%20%3A%20cr%C3%A9ation%20d%27un%20site%20de%20boutique%20en%20ligne.%20Pouvez-vous%20me%20donner%20plus%20d%27informations%20%3F" target="_blank" rel="noopener">WhatsApp</a></div></nav>
+<header class="hero p"><div class="wrap">
+<a class="back" href="index.html">← Tous les projets</a>
+<h1>Boutique en ligne</h1>
+<p class="sub">Vos produits avec photos et prix, et la commande qui arrive directement sur votre WhatsApp.</p>
+<div class="row"><a class="btn js-wa" href="https://wa.me/237657609642?text=Bonjour%2C%20j%27ai%20besoin%20d%27un%20service%20%3A%20cr%C3%A9ation%20d%27un%20site%20de%20boutique%20en%20ligne.%20Pouvez-vous%20me%20donner%20plus%20d%27informations%20%3F" target="_blank" rel="noopener">Je veux ce site</a><a class="btn ghost" href="#details">Voir les détails</a></div>
+<div class="browser"><div class="bar"><i></i><i></i><i></i><span>maboutique.com</span></div>
+<div class="mock"><h4>Nos produits</h4>
+<div class="item"><div><b>Écouteurs sans fil</b><small>Livraison Douala</small></div><em>Commander</em></div>
+<div class="item"><div><b>Coque de téléphone</b><small>Tous modèles</small></div><em>Commander</em></div>
+<div class="item"><div><b>Chargeur rapide</b><small>En stock</small></div><em>Commander</em></div>
+</div></div>
+</div></header>
+<main class="wrap">
+<section id="details">
+<h2>Ce que votre site vous apporte</h2>
+<p class="lead">Un site pensé pour que vos clients vous contactent plus vite.</p>
+<div class="grid c3">
+<div class="card"><div class="ic">🛍️</div><h3>Catalogue clair</h3><p>Photos, prix et description faciles à mettre à jour.</p></div>
+<div class="card"><div class="ic">💬</div><h3>Commande en un clic</h3><p>Le client vous écrit sur WhatsApp avec son article déjà choisi.</p></div>
+<div class="card"><div class="ic">💳</div><h3>Paiement Mobile Money</h3><p>MTN MoMo et Orange Money, livraison par quartier.</p></div>
+</div>
+</section>
+<section>
+<h2>Comment on travaille</h2>
+<ol class="steps">
+<li>Vous m'écrivez sur WhatsApp et vous me dites ce que vous proposez.</li>
+<li>Je vous montre une maquette avec vos couleurs et votre logo.</li>
+<li>Vous payez un acompte par MTN MoMo ou Orange Money.</li>
+<li>Je livre votre site, prêt à partager sur Facebook, TikTok et WhatsApp.</li>
+</ol>
+</section>
+<section>
+<div class="cta"><h2>Prêt à lancer votre site ?</h2><p>Dès 60 000 FCFA. Réponse rapide sur WhatsApp.</p><a class="btn js-wa" href="https://wa.me/237657609642?text=Bonjour%2C%20j%27ai%20besoin%20d%27un%20service%20%3A%20cr%C3%A9ation%20d%27un%20site%20de%20boutique%20en%20ligne.%20Pouvez-vous%20me%20donner%20plus%20d%27informations%20%3F" target="_blank" rel="noopener">Demander ce service</a></div>
+</section>
+</main>
+<footer><a href="index.html">Retour au portfolio</a><br>Modèle de démonstration, adapté à votre activité. © Grefus, Douala</footer>
+<a class="fab js-wa" href="https://wa.me/237657609642?text=Bonjour%2C%20j%27ai%20besoin%20d%27un%20service%20%3A%20cr%C3%A9ation%20d%27un%20site%20de%20boutique%20en%20ligne.%20Pouvez-vous%20me%20donner%20plus%20d%27informations%20%3F" target="_blank" rel="noopener">💬 WhatsApp</a>
+</body>
+</html>
